@@ -1,0 +1,42 @@
+import React from "react";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { AddCategory, AddTask } from "./Pages"
+
+import AddCategory from "./Pages/AddCategory";
+import AddTask from "./Pages/AddTask";
+import Categories from "./Pages/Categories";
+import Dashboard from "./Pages/Dashboard";
+import Profile from "./Pages/Profile";
+import SignUp from "./Pages/SignUp";
+import Tasks from "./Pages/Tasks";
+import Login from "./Pages/Login";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
+
+// import pages
+function App() {
+  //ESTADO// declarado entre corchetes con nombre del estado: page, fx que permite editar el estado: setPage, con hocks: useState, le pasamos como valor por defecto: ("Login"), que cada vez que se carge la pagina salga Login, entre paréntesis pasamos un valor por defecto, valor inicial del estado
+  const [page, setPage] = useState("Login"); 
+
+  //esta fx cambia de pagina, si aprieto AddCategory,invoco a la fx que cambia de pagina, setPage va a recibir AddCaegory por ejemplo, cuando se setea un estado se refresca el componente.
+  const changePage = (page: string) => {
+    setPage(page); //set page vale page//cambiamos el valor del estado y se vuelve a ejecutar, se refresa/actualiza
+  };
+
+  //muestra todo lo que se está imprimiendo en pantalla
+  return (
+    <>
+      {page === "Login" && <Login onChangePage={changePage} />}
+      {page === "AddCategory" && <AddCategory />}
+      {page === "AddTask" && <AddTask />}
+      {page === "Categories" && <Categories />}
+      {page === "Profile" && <Profile />}
+      {page === "Profile" && <SignUp />}
+      {page === "Tasks" && <Tasks />}
+      {page === "Dashboard" && <Dashboard onChangePage={changePage}/>}
+    </>
+  );
+}
+
+export default App;
+
