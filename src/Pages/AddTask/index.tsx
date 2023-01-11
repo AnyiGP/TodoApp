@@ -3,7 +3,7 @@ import MyLayout from "../../Components/Layout";
 
 const AddTask: FC = () => {
     return (
-      <div className="addTask">
+      <div className="saveTask">
         <MyLayout/>
               <h1>Add Task</h1>
 
@@ -12,3 +12,5 @@ const AddTask: FC = () => {
   }
   
   export default AddTask;
+  
+  export {AddTask};

@@ -6,6 +6,8 @@ const getAll = () => {};
 
 const get = (id: string) => {};
 
+// imit es un utility types, para omitir pedir el id y que me tire error
+
 type AddPayload = Omit<Category, "id">
 
 const add = async (category: AddPayload) => {
@@ -32,6 +34,6 @@ const add = async (category: AddPayload) => {
 export const categoriesService = { getAll, get, add };
 
 //puedo entrar como un ebjeto
-categoriesService.getAll()
+// categoriesService.getAll()
 
 // export { categoriesService };

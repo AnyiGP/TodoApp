@@ -12,3 +12,4 @@ const Users: FC = () => {
   }
   
   export default Users
+  export { Users }

@@ -5,14 +5,18 @@ import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 // import { AddCategory, AddTask } from "./Pages"
 //////////////////////////////////////////////
 // import SaveCategory from "./Pages/SaveCategory";
-import AddTask from "./Pages/AddTask";
-import Categories from "./Pages/Categories";
-import Dashboard from "./Pages/Dashboard";
-import Profile from "./Pages/Profile";
-import SignUp from "./Pages/SignUp";
-import Tasks from "./Pages/Tasks";
-import Login from "./Pages/Login";
+// import AddTask from "./Pages/AddTask";
+// import Categories from "./Pages/Categories";
+// import Dashboard from "./Pages/Dashboard";
+// import Profile from "./Pages/Profile";
+// import SignUp from "./Pages/SignUp";
+// import Tasks from "./Pages/Tasks";
+// import Login from "./Pages/Login";
 /////////////////////////////////////////////////////
+
+import { SaveUser, Dashboard, Profile, SignUp, Tasks, Login, Users, SaveCategory, AddTask, Categories, Error404
+} from "./Pages";
+
 
 import Header from "./Components/Layout/Header";
 import Nav from "./Components/Layout/Nav";

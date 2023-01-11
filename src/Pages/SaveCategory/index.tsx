@@ -1,38 +1,39 @@
 // import { FC } from "react";
 // import MyLayout from "../../Components/Layout";
-import {useState} from "react"
+import { useState } from "react";
 import { categoriesService } from "../../Servicies";
 
 const SaveCategory = () => {
-  //armo un estado y le agrego un hook que tengo que importa arriba useState
+  //armo un estado y le agrego un hook que tengo que importa arriba useState, catName y setCatNme los usamos par controlarlo uqe se va escribiendo en le input, voy a tener los datos setados/actualizados de lo q valla escribiendo en el imput
   const [catName, setCatName] = useState("");
+  const [color, setColor] = useState("");
 
-  //armo una funci'on que va a recibir un evento, le pongo un e.default para que no me tire error
+  const category = {
+    name: catName,
+    color: color
+  }
+  //armo una funci'on que va a recibir un evento, le pongo un e.default para que no me tire error, este saveCategory es funcion
   const saveCategory = (e: any) => {
     e.preventDefault();
-    categoriesService.add(
-      {name: catName}
-    )
+    categoriesService.add(category
+      );
   };
 
   return (
-    // <div className="SaveCategory">
-    //   <h1>Save Category</h1>
-    // </div>
-
     <>
       <h1>Estoy en Save Category</h1>
       <form onSubmit={saveCategory}>
         <div className="form-group">
           <label htmlFor="">Nombre</label>
           {/* color agregar en otro input */}
-          
-          <input 
-          type="text" 
-          name="name" 
-          id="name-category" 
-          value={catName}
-          onChange={e => setCatName(e.target.value)} />
+
+          <input
+            type="text"
+            name="name"
+            id="name-category"
+            value={catName}
+            onChange={(e) => setCatName(e.target.value)}
+          />
         </div>
         <button type="submit" className="btn btn-primary">
           Agregar

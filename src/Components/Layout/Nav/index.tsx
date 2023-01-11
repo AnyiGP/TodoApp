@@ -9,31 +9,34 @@ const NavBar: FC = () => {
   return (
        <Nav variant="tabs" defaultActiveKey="/home">
           <Nav.Item>
-            <NavLink to="/Dashboard">Dashboard</NavLink>
+            <NavLink to="/dashboard">Dashboard</NavLink>
           </Nav.Item>
           <Nav.Item>
-            <NavLink to="/Login">Login</NavLink>
+            <NavLink to="/login">Login</NavLink>
           </Nav.Item>
           <Nav.Item>
-            <NavLink to="/SaveCategory">SaveCategory</NavLink>
+            <NavLink to="/saveCategory">SaveCategory</NavLink>
           </Nav.Item>
           <Nav.Item>
-            <NavLink to="/AddTask">AddTask</NavLink>
+            <NavLink to="/addTask">AddTask</NavLink>
           </Nav.Item>
           <Nav.Item>
-            <NavLink to="/Categories">Categories</NavLink>
+            <NavLink to="/categories">Categories</NavLink>
           </Nav.Item>
           <Nav.Item>
-            <NavLink to="/Profile">Profile</NavLink>
+            <NavLink to="/profile">Profile</NavLink>
           </Nav.Item>
           <Nav.Item>
-            <NavLink to="/SignUp">SignUp</NavLink>
+            <NavLink to="/signUp">SignUp</NavLink>
           </Nav.Item>
           <Nav.Item>
-            <NavLink to="/Task">Task</NavLink>
+            <NavLink to="/tasks">Tasks</NavLink>
           </Nav.Item>
           <Nav.Item>
-            <NavLink to="/Users">Users</NavLink>
+            <NavLink to="/users">Users</NavLink>
+          </Nav.Item>
+          <Nav.Item>
+            <NavLink to="/users/save">saveUsers</NavLink>
           </Nav.Item>
 
 {/* 

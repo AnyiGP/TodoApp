@@ -7,7 +7,7 @@ const getAll = () => {}
 const get = (id: string) => {}
 
 type AddPayload = Omit<User, "id">
-
+//2.33.55
 const add = async (user: AddPayload) => {
     const options = {
         method: "POST",
@@ -23,3 +23,5 @@ const add = async (user: AddPayload) => {
 }
 
 export const userService = { getAll, get, add }
+
+// userService.getAll()

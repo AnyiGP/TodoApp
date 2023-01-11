@@ -10,4 +10,4 @@ const SignUp: FC = () => {
     );
   }
   
-  export default SignUp;
+  export {SignUp};

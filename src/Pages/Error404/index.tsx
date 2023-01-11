@@ -1,14 +1,15 @@
 import { FC } from "react";
 import MyLayout from "../../Components/Layout";
 
-const Profile: FC = () => {
+const Error404: FC = () => {
     return (
-      <div className="profile">
+      <div className="error404">
         <MyLayout/>
-        <h1>Profile</h1>
+        <h1>Error 404</h1>
+        <a href="/dashboard">Home</a>
         </div>
     );
   }
   
   // export default Profile;
-  export {Profile};
+  export {Error404}; 

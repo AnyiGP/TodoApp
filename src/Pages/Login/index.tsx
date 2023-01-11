@@ -25,3 +25,4 @@ import MyLayout from "../../Components/Layout";
   }
 
   export default Login;
+  export {Login};
