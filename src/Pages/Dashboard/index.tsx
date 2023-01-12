@@ -19,7 +19,9 @@ const Dashboard: FC = () => {
   return (
     <div className="dashboard">
       {/* <MyLayout /> */}
+      {/* Debería mostrar layout */}
       <h1>Dashboard</h1>
+
     </div>
   );
 };

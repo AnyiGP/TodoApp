@@ -14,7 +14,7 @@ import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 // import Login from "./Pages/Login";
 /////////////////////////////////////////////////////
 
-import { SaveUser, Dashboard, Profile, SignUp, Tasks, Login, Users, SaveCategory, AddTask, Categories, Error404
+import { SaveUser, Dashboard, Profile, SignUp, Tasks, Login, Users, SaveCategory, SaveTask, Categories, Error404
 } from "./Pages";
 
 

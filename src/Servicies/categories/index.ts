@@ -2,11 +2,23 @@ import { Category } from "../../types";
 import { URL_BASE } from "../../Constantes"
 import { Type } from "typescript";
 
-const getAll = () => {};
+const getAll = async () => {
+    const response = await fetch(`${URL_BASE}/categories.json`)
 
-const get = (id: string) => {};
+    const data = await response.json()
 
-// imit es un utility types, para omitir pedir el id y que me tire error
+    return data
+};
+
+const get = async (id: string) => {
+    const response = await fetch(`${URL_BASE}/categories/${id}.json`);
+
+    const data = await response.json()
+
+    return data
+};
+
+// Omit es un utility types, para omitir pedir el id y que me tire error
 
 type AddPayload = Omit<Category, "id">
 

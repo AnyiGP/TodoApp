@@ -25,6 +25,7 @@ const SaveCategory = () => {
       <form onSubmit={saveCategory}>
         <div className="form-group">
           <label htmlFor="">Nombre</label>
+          
           {/* color agregar en otro input */}
 
           <input
@@ -33,6 +34,14 @@ const SaveCategory = () => {
             id="name-category"
             value={catName}
             onChange={(e) => setCatName(e.target.value)}
+          />
+          <input
+            type="color"
+            name="name"
+            color="color"
+            id="name-color"
+            value={color}
+            onChange={(e) => setColor(e.target.value)}
           />
         </div>
         <button type="submit" className="btn btn-primary">

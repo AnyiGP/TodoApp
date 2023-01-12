@@ -18,7 +18,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 // import { SaveUser } from "./Pages";
-import { SaveUser, Dashboard, Profile, SignUp, Tasks, Login, Users, SaveCategory, AddTask, Categories, Error404
+import { SaveUser, Dashboard, Profile, SignUp, Tasks, Login, Users, SaveCategory, SaveTask, Categories, Error404
  } from "./Pages";
 
 
@@ -65,7 +65,7 @@ root.render(
 
         <Route path="tasks/" element={<Tasks />}></Route>
 
-        <Route path="addTask/" element={<AddTask />}></Route>
+        <Route path="saveTask/" element={<SaveTask />}></Route>
 
         <Route path="profile/" element={<Profile />}></Route>
 

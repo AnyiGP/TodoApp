@@ -3,32 +3,31 @@ import { useState } from "react";
 import { userService } from "../../Servicies";
 
 const SaveUser = () => {
-  //usamos un hook que nos da RRD, para traer par'ametro y as'i compretar la url, puedo ir a buscar esos datos a la base de datos para luego hacer algo con ese user
-    const { userId } = useParams();
-    
+  //usamos un hook que nos da RRD, para traer param y compretar la url, puedo ir a buscar esos datos a la base de datos para luego hacer algo con ese user
+  const { userId } = useParams();
+
   //armo un estado y le agrego un hook que tengo que importa arriba useState
   const [userName, setUserName] = useState("");
   const [userLastName, setUserLastName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [userBirthdate, setUserBirthdate] = useState<Date>(new Date());
-  
-  
+
   const SaveUser = (e: any) => {
     e.preventDefault();
     const user = {
-        name: userName,
-        lastname: userLastName,
-        email: userEmail,
-        password: userPassword,
-        birthdate: userBirthdate
-      }
-      userService.add(user);
+      name: userName,
+      lastname: userLastName,
+      email: userEmail,
+      password: userPassword,
+      birthdate: userBirthdate,
+    };
+    userService.add(user);
   };
 
   return (
     <>
-      <h1>Estoy en Save Usuer</h1>
+      <h1>Estoy en Save User</h1>
       <form onSubmit={SaveUser}>
         <div className="form-group">
           <label htmlFor="name">Nombre</label>
@@ -62,7 +61,7 @@ const SaveUser = () => {
             name="Pasword"
             id="pasword-category"
             value={userPassword}
-            onChange={(e) =>  setUserPassword(e.target.value)}
+            onChange={(e) => setUserPassword(e.target.value)}
           />
           <label htmlFor="birthday">Fecha de Nacimiento</label>
           <input
@@ -70,10 +69,8 @@ const SaveUser = () => {
             name="Birthday"
             id="birthday-category"
             value={userBirthdate.toString()}
-            onChange={(e) => setUserBirthdate(new Date( e.target.value))}
+            onChange={(e) => setUserBirthdate(new Date(e.target.value))}
           />
-                   
-          
         </div>
         <button type="submit" className="btn btn-primary">
           Agregar

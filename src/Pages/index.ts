@@ -2,7 +2,7 @@ export { SaveUser } from "./SaveUser";
 export { SaveCategory } from "./SaveCategory";
 export { Categories } from "./Categories";
 export { Users } from "./Users";
-export { AddTask } from "./AddTask";
+export { SaveTask } from "./SaveTask";
 export { Dashboard } from "./Dashboard";
 export { Login } from "./Login";
 export { Profile } from "./Profile";

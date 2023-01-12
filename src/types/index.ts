@@ -1,3 +1,4 @@
+import { Color } from "react-bootstrap/esm/types";
 import { SaveCategory } from "../Pages";
 
 export type User = {
@@ -12,6 +13,7 @@ export type User = {
 export type Category = {
   id: string;
   name: string;
+//   color: Color;
 };
 
 export type Task = {
@@ -20,6 +22,7 @@ export type Task = {
   date: Date;
   category: Category;
   description: string;
+  status: string;
 };
 
 // //para hacer un post le tengo uqe pasar un segundo param, creo un objeto

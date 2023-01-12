@@ -10,7 +10,5 @@ const Categories: FC = () => {
     </div>
   );
 };
-// export {Categories};
 
-export default Categories;
 export { Categories };
