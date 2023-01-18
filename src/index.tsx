@@ -45,15 +45,15 @@ root.render(
           <Route path="save/" element={<AddCategory />}></Route>
         </Route> */}
 
-        {/* <Route path="Categories/">
+        <Route path="Categories/">
           <Route index element={<Categories />} />
           <Route path="save" element={<SaveCategory />}></Route>
           <Route path="save/:categoryId" element={<SaveCategory />}></Route>
-        </Route> */}
+        </Route>
 
-        <Route path="categories/" element={<Categories />}></Route>
+        {/* <Route path="categories/" element={<Categories />}></Route>
 
-        <Route path="saveCategory/" element={<SaveCategory />}></Route>
+        <Route path="saveCategory/" element={<SaveCategory />}></Route> */}
 
         {/* <Route path="Task/" element={<Tasks />}> */}
           

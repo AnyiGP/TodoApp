@@ -15,7 +15,7 @@ const NavBar: FC = () => {
             <NavLink to="/login">Login</NavLink>
           </Nav.Item>
           <Nav.Item>
-            <NavLink to="/saveCategory">SaveCategory</NavLink>
+            <NavLink to="/categories/save">SaveCategory</NavLink>
           </Nav.Item>
           <Nav.Item>
             <NavLink to="/saveTask">SaveTask</NavLink>

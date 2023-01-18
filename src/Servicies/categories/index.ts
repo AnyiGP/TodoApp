@@ -18,7 +18,7 @@ const get = async (id: string) => {
     return data
 };
 
-// Omit es un utility types, para omitir pedir el id y que me tire error
+// Omit es un utility types, para omitir pedir el id y que no me tire error
 
 type AddPayload = Omit<Category, "id">
 

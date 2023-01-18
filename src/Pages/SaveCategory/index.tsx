@@ -35,11 +35,12 @@ const SaveCategory = () => {
             value={catName}
             onChange={(e) => setCatName(e.target.value)}
           />
+          <label htmlFor="color-category">Color</label>
           <input
             type="color"
-            name="name"
+            name="color"
             color="color"
-            id="name-color"
+            id="color-category"
             value={color}
             onChange={(e) => setColor(e.target.value)}
           />
