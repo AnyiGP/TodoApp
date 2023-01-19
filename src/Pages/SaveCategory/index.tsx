@@ -14,9 +14,14 @@ const SaveCategory = () => {
   }
   //armo una funci'on que va a recibir un evento, le pongo un e.default para que no me tire error, este saveCategory es funcion
   const saveCategory = (e: any) => {
+    // console.log(saveCategory)
+
+    
     e.preventDefault();
+    
     categoriesService.add(category
       );
+      
   };
 
   return (
@@ -24,7 +29,7 @@ const SaveCategory = () => {
       <h1>Estoy en Save Category</h1>
       <form onSubmit={saveCategory}>
         <div className="form-group">
-          <label htmlFor="">Nombre</label>
+          <label htmlFor="name-category">Nombre</label>
           
           {/* color agregar en otro input */}
 

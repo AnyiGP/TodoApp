@@ -13,8 +13,10 @@ export type User = {
 export type Category = {
   id: string;
   name: string;
-//   color: Color;
+  color: string;
 };
+
+//si necesito que algún dato sea opcional debo poner :?
 
 export type Task = {
   id: string;

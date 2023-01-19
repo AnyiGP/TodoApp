@@ -18,7 +18,7 @@ const get = async (id: string) => {
     return data
 };
 
-// Omit es un utility types, para omitir pedir el id y que no me tire error
+// Omit es un utility types, para omitir pedir el id y que no me tire error. Partial es otro utility type
 
 type AddPayload = Omit<Category, "id">
 
@@ -44,6 +44,8 @@ const add = async (category: AddPayload) => {
 //cuando la propiedad tiene el mismo nombre de la variable que le da valor no es necesario ponerlo
 
 export const categoriesService = { getAll, get, add };
+
+//udate, delete/remove
 
 //puedo entrar como un ebjeto
 // categoriesService.getAll()

@@ -1,6 +1,6 @@
 // import { FC } from "react";
 // import MyLayout from "../../Components/Layout";
-
+import Form from 'react-bootstrap/Form';
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { taskService } from "../../Servicies";
@@ -32,6 +32,8 @@ const SaveTask = () => {
     };
     // taskService.add(task, Categories);
     // taskService.add(task);
+    ////////////////////////////////////
+
   };
 
   return (
@@ -56,13 +58,24 @@ const SaveTask = () => {
             onChange={(e) => setTaskDate(new Date(e.target.value))}
           />
 
-          <label htmlFor="category">Apellido</label>
+          <label htmlFor="category">Categoria</label>
           {/* <select name="" id="">
 
           como cargamos el selec con las categorias que va cargando el usuario en firebase
 
           </select>
            */}
+
+
+    <Form.Select aria-label="Default select example">
+      <option>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </Form.Select>
+
+
+
           <input
             type="text"
             name="category"
