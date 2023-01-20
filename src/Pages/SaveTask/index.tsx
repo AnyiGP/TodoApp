@@ -1,6 +1,6 @@
 // import { FC } from "react";
 // import MyLayout from "../../Components/Layout";
-import Form from 'react-bootstrap/Form';
+import Form from "react-bootstrap/Form";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { taskService } from "../../Servicies";
@@ -8,7 +8,7 @@ import { taskService } from "../../Servicies";
 
 const SaveTask = () => {
   //usamos un hook que nos da RRD, para traer param y compretar la url, puedo ir a buscar esos datos a la base de datos para luego hacer algo con ese user
-  
+
   const { taskId } = useParams();
 
   //armo un estado y le agrego un hook que tengo que importa arriba useState
@@ -30,10 +30,10 @@ const SaveTask = () => {
       description: taskDescription,
       status: taskStatus,
     };
+
     // taskService.add(task, Categories);
     // taskService.add(task);
     ////////////////////////////////////
-
   };
 
   return (
@@ -49,7 +49,7 @@ const SaveTask = () => {
             value={taskTitle}
             onChange={(e) => setTaskTitle(e.target.value)}
           />
-          <label htmlFor="date">Fecha de Nacimiento</label>
+          <label htmlFor="date">Fecha</label>
           <input
             type="date"
             name="date"
@@ -58,7 +58,6 @@ const SaveTask = () => {
             onChange={(e) => setTaskDate(new Date(e.target.value))}
           />
 
-          <label htmlFor="category">Categoria</label>
           {/* <select name="" id="">
 
           como cargamos el selec con las categorias que va cargando el usuario en firebase
@@ -66,23 +65,20 @@ const SaveTask = () => {
           </select>
            */}
 
+          <Form.Select aria-label="Categorias">
+            <option>Categorias</option>
+            <option value={taskCategory}>One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </Form.Select>
 
-    <Form.Select aria-label="Default select example">
-      <option>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </Form.Select>
-
-
-
-          <input
+          {/* <input
             type="text"
             name="category"
             id="task-category"
             value={taskCategory}
             onChange={(e) => setTaskCategory(e.target.value)}
-          />
+          /> */}
           <label htmlFor="description">Descripcion</label>
           <input
             type="text"

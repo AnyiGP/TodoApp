@@ -1,13 +1,15 @@
 import { Category } from "../../types";
 import { URL_BASE } from "../../Constantes"
 import { Type } from "typescript";
+import { mapToArray } from "../../helpers/mapToArray";
+
 
 const getAll = async () => {
     const response = await fetch(`${URL_BASE}/categories.json`)
 
     const data = await response.json()
 
-    return data
+    return mapToArray<Category>(data)
 };
 
 const get = async (id: string) => {

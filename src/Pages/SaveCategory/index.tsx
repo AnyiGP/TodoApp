@@ -3,26 +3,28 @@
 import { useState } from "react";
 import { categoriesService } from "../../Servicies";
 
+
+
 const SaveCategory = () => {
   //armo un estado y le agrego un hook que tengo que importa arriba useState, catName y setCatNme los usamos par controlarlo uqe se va escribiendo en le input, voy a tener los datos setados/actualizados de lo q valla escribiendo en el imput
+
   const [catName, setCatName] = useState("");
   const [color, setColor] = useState("");
 
   const category = {
     name: catName,
-    color: color
-  }
+    color: color,
+  };
   //armo una funci'on que va a recibir un evento, le pongo un e.default para que no me tire error, este saveCategory es funcion
   const saveCategory = (e: any) => {
     // console.log(saveCategory)
 
-    
     e.preventDefault();
-    
-    categoriesService.add(category
-      );
-      
+
+    categoriesService.add(category);
   };
+
+  
 
   return (
     <>
@@ -30,7 +32,7 @@ const SaveCategory = () => {
       <form onSubmit={saveCategory}>
         <div className="form-group">
           <label htmlFor="name-category">Nombre</label>
-          
+
           {/* color agregar en otro input */}
 
           <input
@@ -58,7 +60,7 @@ const SaveCategory = () => {
   );
 };
 
-export default SaveCategory;
+// export default SaveCategory;
 export { SaveCategory };
 
 // const SaveCategory: FC = () => {
