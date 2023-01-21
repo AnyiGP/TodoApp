@@ -11,7 +11,7 @@ const Categories: FC = () => {
 
   const traerCategorias = async () => {
     const rta = await categoriesService.getAll();
-    console.log(rta);
+    // console.log(rta);
 
     if (!categories.length) setCategories(rta);
 

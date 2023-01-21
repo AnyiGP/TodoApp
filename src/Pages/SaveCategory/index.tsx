@@ -33,7 +33,7 @@ const SaveCategory = () => {
   return (
     <>
       <NavBar />
-      <h1>Estoy en Save Category</h1>
+      <h1>Nueva Categoria</h1>
       <form onSubmit={saveCategory}>
         <Stack direction="horizontal" gap={3}>
           <Form.Control
@@ -45,6 +45,8 @@ const SaveCategory = () => {
             value={catName}
             onChange={(e) => setCatName(e.target.value)}
           />
+          <label htmlFor="color-category">Color</label>
+
           <Form.Control
             className="me-auto"
             placeholder="Color"
@@ -69,59 +71,31 @@ const SaveCategory = () => {
   );
 };
 
-// export default SaveCategory;
 export { SaveCategory };
 
-// const SaveCategory: FC = () => {
-//     return (
-//       <div className="SaveCategory">
-//         <MyLayout/>
-//               <h1>Save Category</h1>
-
-//         </div>
-//     );
-//   }
-
-//   // export default SaveCategory;
-//   export {SaveCategory};
-
-// //////////////
-// function AddCategory() {
-//   return (
-//     <div className="addCategory">
-
-//             <h1>Add Category</h1>
-
-//       </div>
-//   );
-// }
-
-// export default AddCategory;
-
-
-        // <div className="form-group">
-        //   <label htmlFor="name-category">Nombre</label>
-        //   <input
-        //     type="text"
-        //     name="name"
-        //     id="name-category"
-        //     value={catName}
-        //     onChange={(e) => setCatName(e.target.value)}
-        //   />
-        //   <label htmlFor="color-category">Color</label>
-        //   <input
-        //     type="color"
-        //     name="color"
-        //     color="color"
-        //     id="color-category"
-        //     value={color}
-        //     onChange={(e) => setColor(e.target.value)}
-        //   />
-        // </div>
-        // <button type="submit" className="btn btn-primary">
-        //   Agregar
-        // </button>
-        // {ifError && 
-        // <Alert variant="danger">
-        // <Alert.Heading>Error!</Alert.Heading>
-        // </Alert> }
+// <div className="form-group">
+//   <label htmlFor="name-category">Nombre</label>
+//   <input
+//     type="text"
+//     name="name"
+//     id="name-category"
+//     value={catName}
+//     onChange={(e) => setCatName(e.target.value)}
+//   />
+//   <label htmlFor="color-category">Color</label>
+//   <input
+//     type="color"
+//     name="color"
+//     color="color"
+//     id="color-category"
+//     value={color}
+//     onChange={(e) => setColor(e.target.value)}
+//   />
+// </div>
+// <button type="submit" className="btn btn-primary">
+//   Agregar
+// </button>
+// {ifError &&
+// <Alert variant="danger">
+// <Alert.Heading>Error!</Alert.Heading>
+// </Alert> }

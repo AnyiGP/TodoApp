@@ -1,13 +1,17 @@
 import { FC } from "react";
 import MyLayout from "../../Components/Layout";
+import NavBar from "../../Components/Layout/Nav";
 
 const Users: FC = () => {
     return (
+      <>
+      <NavBar />
       <div className="users">
-        {/* <MyLayout/> */}
-        <h1>Users</h1>
+        
+        <h2>Users</h2>
         
         </div>
+        </>
     );
   }
   
