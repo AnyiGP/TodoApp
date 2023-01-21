@@ -1,41 +1,45 @@
 import { Category } from "../../types";
-import { URL_BASE } from "../../Constantes"
+import { URL_BASE } from "../../Constantes";
 import { Type } from "typescript";
 import { mapToArray } from "../../helpers/mapToArray";
 
-
 const getAll = async () => {
-    const response = await fetch(`${URL_BASE}/categories.json`)
+  const response = await fetch(`${URL_BASE}/categories.json`);
 
-    const data = await response.json()
+  const data = await response.json();
 
-    return mapToArray<Category>(data)
+  return mapToArray<Category>(data);
 };
 
 const get = async (id: string) => {
-    const response = await fetch(`${URL_BASE}/categories/${id}.json`);
+  const response = await fetch(`${URL_BASE}/categories/${id}.json`);
 
-    const data = await response.json()
+  const data = await response.json();
 
-    return data
+  return data;
 };
 
 // Omit es un utility types, para omitir pedir el id y que no me tire error. Partial es otro utility type
 
-type AddPayload = Omit<Category, "id">
+type AddPayload = Omit<Category, "id">;
 
 const add = async (category: AddPayload) => {
-    const options = {
-        method: "POST",
-        body: JSON.stringify(category) 
-    }
-    //le pongo el end point que yo quiero es lo que se va a mostrar  
-    const response = await fetch(`${URL_BASE}/categories.json`, options)
+  const options = {
+    method: "POST",
+    body: JSON.stringify(category),
+  };
+  //le pongo el end point que yo quiero es lo que se va a mostrar
+  const response = await fetch(`${URL_BASE}/categories.json`, options);
 
-    const data = await response.json()
+  const data = await response.json();
 
-    console.log(data)
+//   console.log(data);
 
+  if (data.name) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 // const categoriesService = {
