@@ -40,6 +40,9 @@ const SaveUser = () => {
     // } else {
     //   setIfError(true);
     // }
+
+    ///no me deja setear los datos, respuesta me da error porque no está typado, cómo lo typeo?
+    
   };
 
   return (

@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from "react";
-// import { Categories } from "..";
 import Table from "react-bootstrap/Table";
 import MyLayout from "../../Components/Layout";
 import NavBar from "../../Components/Layout/Nav";
 import { categoriesService } from "../../Servicies";
 import { Category } from "../../types";
+import Button from 'react-bootstrap/Button';
 
 const Categories: FC = () => {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -29,17 +29,17 @@ const Categories: FC = () => {
     <>
     <NavBar/>
     <div className="categories">
-      {/* debe mostrar el listado de las categorias en una tabla */}
-
+      
       <Table striped bordered hover variant="dark">
         <thead>
           <tr>
-            <td colSpan={3}>Categorias</td>
+            <td colSpan={4}>Categorias</td>
           </tr>
           <tr>
             <th>ID</th>
             <th>Name</th>
             <th>Color</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -49,6 +49,13 @@ const Categories: FC = () => {
                 <td>{elem.id}</td>
                 <td>{elem.name}</td>
                 <td>{elem.color}</td>
+                <td>
+                <Button variant="secondary">Borrar</Button>{' '}
+                </td>
+                <td>
+                <Button variant="secondary">Editar</Button>{' '}
+                </td>
+  
               </tr>
             );
           })}

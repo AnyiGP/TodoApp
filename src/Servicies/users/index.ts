@@ -1,8 +1,15 @@
 import { User } from "../../types"
 import { URL_BASE } from "../../Constantes"
 import { Type } from "typescript"
+import { mapToArray } from "../../helpers/mapToArray"
 
-const getAll = () => {}
+const getAll = async () => {
+    const response = await fetch(`${URL_BASE}/user.json`)
+    const data = await response.json()
+
+    return mapToArray<User>(data) //le pasamos como param la data que cae de firebase, los users
+
+}
 
 const get = (id: string) => {}
 
@@ -18,7 +25,7 @@ const add = async (user: AddPayload) => {
 
     const data = await response.json()
 
-    console.log(data)
+    // console.log(data)
 
 }
 
