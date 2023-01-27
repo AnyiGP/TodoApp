@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { taskService } from "../../Servicies";
+import NavBar from "../../Components/Layout/Nav";
 // import {Categories} from "../Categories";
 
 const SaveTask = () => {
@@ -38,6 +39,7 @@ const SaveTask = () => {
 
   return (
     <>
+    <NavBar />
       <h1>Estoy en Save Task</h1>
       <form onSubmit={SaveTask}>
         <div className="form-group">

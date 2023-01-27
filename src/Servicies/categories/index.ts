@@ -33,13 +33,23 @@ const add = async (category: AddPayload) => {
 
   const data = await response.json();
 
-//   console.log(data);
+  //   console.log(data);
 
   if (data.name) {
     return true;
   } else {
     return false;
   }
+};
+
+const update = (category: Partial<Category>) => {};
+
+const remove = async (id: string) => {
+  const options = {
+    method: "DELETE",
+  };
+
+  await fetch(`${URL_BASE}/categories/${id}.json`, options);
 };
 
 // const categoriesService = {
@@ -49,7 +59,7 @@ const add = async (category: AddPayload) => {
 // };
 //cuando la propiedad tiene el mismo nombre de la variable que le da valor no es necesario ponerlo
 
-export const categoriesService = { getAll, get, add };
+export const categoriesService = { getAll, get, add, update, remove };
 
 //udate, delete/remove
 

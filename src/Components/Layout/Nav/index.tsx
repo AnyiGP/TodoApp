@@ -13,6 +13,7 @@ const NavBar: FC = () => {
           <Nav.Link href="/dashboard">Dashboard</Nav.Link>
           <Nav.Link href="/login">Login</Nav.Link>
           <Nav.Link href="/categories/save">SaveCategory</Nav.Link>
+          <Nav.Link href="/tasks">Tasks</Nav.Link>
           <Nav.Link href="/saveTask">SaveTask</Nav.Link>
           <Nav.Link href="/categories">Categories</Nav.Link>
           <Nav.Link href="/profile">Profile</Nav.Link>
