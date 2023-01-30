@@ -1,5 +1,21 @@
 import { FC } from "react";
 import MyLayout from "../../Components/Layout";
+import NavBar from "../../Components/Layout/Nav";
+import { Tasks } from "../Tasks";
+
+const Dashboard: FC = () => {
+  return (
+    <>
+    <Tasks />
+    <div className="dashboard">
+    <h1>Dashboard</h1>
+    </div>
+    </>
+  );
+};
+
+// export default Dashboard;
+export {Dashboard};
 
 // type Props = {
 //   onChangePage: (page: string) => void;
@@ -13,18 +29,3 @@ import MyLayout from "../../Components/Layout";
 //     </div>
 //   );
 // };
-
-
-const Dashboard: FC = () => {
-  return (
-    <div className="dashboard">
-      {/* <MyLayout /> */}
-      {/* Debería mostrar layout */}
-      <h1>Dashboard</h1>
-
-    </div>
-  );
-};
-
-// export default Dashboard;
-export {Dashboard};

@@ -46,13 +46,13 @@ const Categories: FC = () => {
       <Table striped bordered hover variant="dark">
         <thead>
           <tr>
-            <td colSpan={4}>Categorias</td>
+            <td colSpan={5}>Categorias</td>
           </tr>
           <tr>
             <th>ID</th>
             <th>Name</th>
             <th>Color</th>
-            <th>Acciones</th>
+            <th colSpan={2}>Acciones</th>
           </tr>
         </thead>
         <tbody>

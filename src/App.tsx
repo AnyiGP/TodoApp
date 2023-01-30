@@ -2,46 +2,49 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 //provider envuelve los bloques de codigo donde necesitamos usar esos dato, entonces vamos a meter todos los datos que queremos compartir, como meter todas las pag en una bolsa, lo podemos hacer en el index principal en vez de la app
 
-// import { AddCategory, AddTask } from "./Pages"
-//////////////////////////////////////////////
-// import SaveCategory from "./Pages/SaveCategory";
-// import AddTask from "./Pages/AddTask";
-// import Categories from "./Pages/Categories";
-// import Dashboard from "./Pages/Dashboard";
-// import Profile from "./Pages/Profile";
-// import SignUp from "./Pages/SignUp";
-// import Tasks from "./Pages/Tasks";
-// import Login from "./Pages/Login";
-/////////////////////////////////////////////////////
-
-import { SaveUser, Dashboard, Profile, SignUp, Tasks, Login, Users, SaveCategory, SaveTask, Categories, Error404
+import {
+  SaveUser,
+  Dashboard,
+  Profile,
+  SignUp,
+  Tasks,
+  Login,
+  Users,
+  SaveCategory,
+  SaveTask,
+  Categories,
+  Error404,
 } from "./Pages";
-
 
 import Header from "./Components/Layout/Header";
 import Nav from "./Components/Layout/Nav";
 import Main from "./Components/Layout/Main";
-import Footer from "./Components/Layout/Footer";
-
+import { Footer } from "./Components/Layout/Footer";
+import Button from "react-bootstrap/esm/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MyLayout from "./Components/Layout";
+import { Btn } from "./Components";
 
 //cargamos una ruta, y en base a esa ruta cargamos un componente
 
 function App() {
   return (
     <>
-    {/* <MyLayout /> */}
-    <Header />
-    <Nav
-    // onChangePage={onChangePage}
-    />
-    <Main />
-    <Outlet />
+      {/* <MyLayout /> */}
+      <Header />
+      <Nav
+      // onChangePage={onChangePage}
+      />
+      <Main />
+      <Outlet />
+      <Button variant="dark">
+        Enviar
+      </Button>
+      <Button variant="primary">Iniciar Sesion</Button>
 
-    <Footer />
+      <Footer />
     </>
-    
+
     // <>
     //   <Header />
     //   <Nav />

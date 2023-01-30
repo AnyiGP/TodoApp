@@ -21,8 +21,11 @@ export type Category = {
 export type Task = {
   id: string;
   title: string;
-  date: Date;
-  category: Category;
+  // date: Date;
+  // category: Category;
+  date: string;
+  category: string;
+  
   description: string;
   status: string;
 };

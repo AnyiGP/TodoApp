@@ -5,7 +5,9 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { taskService } from "../../Servicies";
 import NavBar from "../../Components/Layout/Nav";
-// import {Categories} from "../Categories";
+import { Categories } from "../Categories";
+import Button from "react-bootstrap/Button";
+import Stack from "react-bootstrap/Stack";
 
 const SaveTask = () => {
   //usamos un hook que nos da RRD, para traer param y compretar la url, puedo ir a buscar esos datos a la base de datos para luego hacer algo con ese user
@@ -22,50 +24,58 @@ const SaveTask = () => {
   const [taskDescription, setTaskDescription] = useState("");
   const [taskStatus, setTaskStatus] = useState("");
 
-  const SaveTask = (e: any) => {
+  const task = {
+    title: taskTitle,
+    date: taskDate,
+    category: taskCategory,
+    description: taskDescription,
+    status: taskStatus,
+  };
+
+  const SaveTask = async (e: any) => {
     e.preventDefault();
-    const task = {
-      title: taskTitle,
-      date: taskDate,
-      category: taskCategory,
-      description: taskDescription,
-      status: taskStatus,
-    };
 
     // taskService.add(task, Categories);
     // taskService.add(task);
     ////////////////////////////////////
+
+    // const rta = await taskService.add(task);
+    // if (rta) {
+    //   setTaskTitle("");
+    //   // setTaskDate(""); //esto vacia el input cuando se carga
+    //   setTaskCategory("")
+    //   setTaskDescription("")
+    //   setTaskStatus("")
+    // } else {
+    //   setIfError(true);
+    // }
   };
 
   return (
     <>
-    <NavBar />
-      <h1>Estoy en Save Task</h1>
+      <NavBar />
+      <h1>Nueva Tarea</h1>
       <form onSubmit={SaveTask}>
-        <div className="form-group">
-          <label htmlFor="title">Titulo</label>
-          <input
+        <Stack direction="horizontal" gap={3}>
+          <Form.Control
+            className="me-auto"
+            placeholder="Nombre"
             type="text"
             name="title"
             id="task-title"
             value={taskTitle}
             onChange={(e) => setTaskTitle(e.target.value)}
           />
-          <label htmlFor="date">Fecha</label>
-          <input
+          
+          <Form.Control
+            className="me-auto"
+            placeholder="Fecha"
             type="date"
             name="date"
-            id="date-task"
+            id="task-date"
             value={taskDate.toString()}
             onChange={(e) => setTaskDate(new Date(e.target.value))}
           />
-
-          {/* <select name="" id="">
-
-          como cargamos el selec con las categorias que va cargando el usuario en firebase
-
-          </select>
-           */}
 
           <Form.Select aria-label="Categorias">
             <option>Categorias</option>
@@ -74,47 +84,38 @@ const SaveTask = () => {
             <option value="3">Three</option>
           </Form.Select>
 
-          {/* <input
+          <Form.Control
+            className="me-auto"
+            placeholder="Descripción"
             type="text"
-            name="category"
-            id="task-category"
-            value={taskCategory}
-            onChange={(e) => setTaskCategory(e.target.value)}
-          /> */}
-          <label htmlFor="description">Descripcion</label>
-          <input
-            type="text"
-            name="descriptionEmail"
+            name="description"
             id="task-description"
-            value={taskDescription}
+            value={taskDescription.toString()}
             onChange={(e) => setTaskDescription(e.target.value)}
           />
-          <label htmlFor="status">Status</label>
-          <input
+
+          <Form.Control
+            className="me-auto"
+            placeholder="Status"
             type="check"
             name="status"
             id="task-status"
-            value={taskStatus}
+            value={taskStatus.toString()}
             onChange={(e) => setTaskStatus(e.target.value)}
           />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Agregar
-        </button>
+
+          <Button type="submit" variant="secondary" className="btn btn-primary">
+            Agregar
+          </Button>
+          {/* {ifError && (
+            <Alert variant="danger">
+              <Alert.Heading>Error!</Alert.Heading>
+            </Alert>
+          )} */}
+        </Stack>
       </form>
     </>
   );
-  //   <div>Estoy en save user editando el usuario {userId} </div>;
-};
-
-/////////////////////////////////////////
-// const SaveTask: FC = () => {
-//   return (
-//     <div className="saveTask">
-//       {/* <MyLayout/> */}
-//       <h1>Add Task</h1>
-//     </div>
-//   );
-// };
+  };
 
 export { SaveTask };
